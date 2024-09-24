@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        .cchinh{
+            display: flex;
+            justify-content: center;
+        }
+    .chinh{
+        width: 95%;
+        background-color: rgb(152, 152, 152);
+        color: black;
+        height: 100vh;
+        margin-bottom: 20px;
+        display: flex;
+       gap:200px;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        border-radius: 20px;
+        
+    }
+    .chuchinh{
+        font-size: 60px;
+        margin-top: 300px;
+    
+        
+    }
+    .bar{
+        padding-bottom: 110px;
+        padding-top:100px ;
+        position: fixed;
+        right: 7cm ;
+        z-index: 2;
+    }
+    .lop1{
+        opacity: 0;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap:30px;
+           
+        
+    }
+    .bar:hover~ .lop1 {
+    opacity: 0.7;
+}
+    div.lop1 div{
+        position: absolute;
+        z-index: 3;
+        color: rgb(255, 255, 255);
+    }
+    
+   a{
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+   }
+   a :hover{
+    text-decoration: underline;
+   }
+    
+    </style>
+</head>
+<body>
+    
+    <section class="cchinh">
+        
+    <div class="chinh">
+        
+        <div class="bar">
+            <i class="fa fa-bars" style="font-size: 70px; color: #000000;"></i>
+            
+        </div>
+    
+<div class="chuchinh">Clear thinking at the wrong moment can stifle creativity_</div>
+
+
+
+
+
+
+<div class="lop1" >
+    <a style="text-decoration:underline;" href="">home</a>
+    <a href="">portfolio</a>
+    <a href="">team</a>
+    <a href="">services</a>
+    <a href="">blog</a>
+    <a href="">contact</a>
+    <a href="">buy now</a>
+</div>
+    </div>
+</section>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Layout</title>
+    <style>
+        /* Thiết lập chung cho body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header chứa logo và menu */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+
+        /* Grid layout để chia các ảnh thành nhiều lớp */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 cột */
+            grid-gap: 10px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; /* Đảm bảo ảnh không bị bóp méo */
+        }
+
+        /* Phong cách nút màu đen ở dưới */
+        .black-button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .black-button:hover {
+            background-color: #444;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header chứa logo và menu -->
+    <div class="header">
+        <div class="logo">
+            <!-- Chèn logo -->
+            <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/06/Kalium-Theme-Icon.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <!-- Menu chính -->
+            <a href="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/05/adestra-c-300x200.jpg">All</a>
+            <a href="#">Branding</a>
+            <a href="#">Digital Art</a>
+            <a href="#">Photography</a>
+            <a href="#">Print</a>
+        </div>
+    </div>
+
+    <!-- Lưới chứa các ảnh -->
+    <div class="gallery">
+        <!-- Ảnh 1 -->
+        <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/05/adestra-c-300x200.jpg" alt="Image 1">
+        <!-- Ảnh 2 -->
+        <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2015/03/cloud-inc-c-300x200.jpg" alt="Image 2">
+        <!-- Ảnh 3 -->
+        <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/04/desk-concept-c-468x468.jpg" alt="Image 3">
+        <!-- Ảnh 4 -->
+        <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/04/capricho-c-300x182.jpg" alt="Image 4">
+        <!-- Ảnh 5 -->
+        <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/04/multi-color-c-300x199.jpg" alt="Image 5">
+        <!-- Ảnh 6 -->
+        <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/04/ethics-for-design-c-300x200.jpg" alt="Image 6">
+    </div>
+
+    <!-- Nút đen ở góc dưới bên trái -->
+    <a href="#" class="black-button">Click here!</a>
+
+</body>
+</html>
+
+
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<script>
+    document.onkeydown = function(e) {
+      // Chặn F12
+      if (e.keyCode === 123) {
+        return false;
+      }
+      // Chặn Ctrl + Shift + I
+      if (e.ctrlKey && e.shiftKey && e.key === 'I' || e.key === 'i') {
+        return false;
+      }
+      // Chặn Ctrl + U (Xem mã nguồn)
+      if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+        return false;
+      }
+      // Chặn Ctrl + Shift + J (Mở console)
+      if (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+        return false;
+      }
+    };
+  </script>
+</body>
+</html>
