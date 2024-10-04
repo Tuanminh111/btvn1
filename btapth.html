@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("hello ")
+    </script>
+    <div id="text"></div>
+    <script>
+        document.getElementById("text").innerHTML="right"
+    </script>
+    <script>
+        console.log("hello ")
+    </script>
+    <script>
+        alert("Welcome To My House")
+    </script>
+    <script>
+       function hieucute(x){
+        if(x%2==0){
+            return  document.write("me ");
+        }else document.write("also me ");
+       }
+       hieucute (4); 
+    </script>
+  <pre></pre>
+    
+    <script>
+        var x= prompt("nhập số vào baby");
+        var c = x.split(',').map(Number)
+        var randomIndex = Math.floor(Math.random() * c.length); // Lấy chỉ số ngẫu nhiên từ 0 đến độ dài mảng - 1
+        var tron = c[randomIndex];
+        alert(" I know what u thinking about " + tron);
+
+    </script>
+
+    
+</body>
+</html>
