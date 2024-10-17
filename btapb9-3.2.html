@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 6.2</title>
+    <style>
+
+        input {
+            width: 50px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+        }
+        .result {
+            color: red; 
+        }
+
+        .math-operation {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; 
+        }
+        .math-operation div {
+            margin-right: 10px; 
+        }
+    </style>
+</head>
+<body style="font-size: 15px;">
+
+    <h1>Các phép toán</h1>
+
+    <form id="mathForm">
+        <div class="math-operation">
+        <h2>Phép cộng </h2>
+            <input type="number" id="add1" value="3"> +
+            <input type="number" id="add2" value="3"> 
+            <button type="button" onclick="calculate('add')">=</button>
+            <input type="number" id="addResult" readonly>
+            
+        </div>
+        <div class="math-operation">
+            <h2>Phép trừ </h2>
+            <input type="number" id="sub1" value="3"> -
+            <input type="number" id="sub2" value="3"> 
+            <button type="button" onclick="calculate('sub')">=</button>
+            <input type="number" id="subResult" readonly>
+        </div>
+        <div class="math-operation">
+            <h2>Phép nhân </h2>
+            <input type="number" id="mul1" value="2"> *
+            <input type="number" id="mul2" value="2"> 
+            <button type="button" onclick="calculate('mul')">=</button>
+            <input type="number" id="mulResult" readonly>
+        </div>
+        <div class="math-operation">
+            <h2>Phép chia </h2>
+            <input type="number" id="div1" value="3"> /
+            <input type="number" id="div2" value="3"> 
+            <button type="button" onclick="calculate('div')">=</button>
+            <input type="number" id="divResult" readonly>
+        </div>
+        <br>
+        
+
+        <p id="errorMessage" class="error"></p>
+    </form>
+    <h2> Các phép toán vừa thực hiện</h2>
+    <p>PHÉP CỘNG </p><div id="addOutput" class="result"></div> 
+</div>
+    <P>PHÉP TRỪ</P><div id="subOutput" class="result"></div> 
+    <P>PHÉP NHÂN</P><div id="mulOutput" class="result"></div>
+    <P>PHÉP CHIA</P><div id="divOutput" class="result"></div> 
+    
+
+    <script>
+        function calculate(operation) {
+            let result;
+            let operationString = ""; 
+
+            switch (operation) {
+                case 'add':
+                    const add1 = parseFloat(document.getElementById("add1").value);
+                    const add2 = parseFloat(document.getElementById("add2").value);
+                    result = add1 + add2;
+                    document.getElementById("addResult").value = result;
+                    operationString = `${add1} + ${add2} = ${result}`; 
+                    document.getElementById("addOutput").innerHTML = operationString; 
+                    break;
+
+                case 'sub':
+                    const sub1 = parseFloat(document.getElementById("sub1").value);
+                    const sub2 = parseFloat(document.getElementById("sub2").value);
+                    result = sub1 - sub2;
+                    document.getElementById("subResult").value = result;
+                    operationString = `${sub1} - ${sub2} = ${result}`; 
+                    document.getElementById("subOutput").innerHTML = operationString; 
+                    break;
+
+                case 'mul':
+                    const mul1 = parseFloat(document.getElementById("mul1").value);
+                    const mul2 = parseFloat(document.getElementById("mul2").value);
+                    result = mul1 * mul2;
+                    document.getElementById("mulResult").value = result;
+                    operationString = `${mul1} * ${mul2} = ${result}`; 
+                    document.getElementById("mulOutput").innerHTML = operationString; 
+                    break;
+
+                case 'div':
+                    const div1 = parseFloat(document.getElementById("div1").value);
+                    const div2 = parseFloat(document.getElementById("div2").value);
+
+                    if (div2 !== 0) {
+                        result = div1 / div2;
+                        document.getElementById("divResult").value = result;
+                        operationString = `${div1} / ${div2} = ${result}`; 
+                        document.getElementById("divOutput").innerHTML = operationString; 
+                    } else {
+                        document.getElementById("errorMessage").innerHTML = "Không thể chia cho 0!";
+                    }
+                    return; 
+            }
+
+            document.getElementById("errorMessage").innerHTML = ""; 
+        }
+
+        function validate() {
+            let isValid = true;
+            let errorMessage = "";
+
+            const add1 = parseFloat(document.getElementById("add1").value);
+            const add2 = parseFloat(document.getElementById("add2").value);
+            const addResult = parseFloat(document.getElementById("addResult").value);
+            if (add1 + add2 !== addResult) {
+                errorMessage += "Phép cộng sai!<br>";
+                isValid = false;
+            }
+
+            const sub1 = parseFloat(document.getElementById("sub1").value);
+            const sub2 = parseFloat(document.getElementById("sub2").value);
+            const subResult = parseFloat(document.getElementById("subResult").value);
+            if (sub1 - sub2 !== subResult) {
+                errorMessage += "Phép trừ sai!<br>";
+                isValid = false;
+            }
+
+            const mul1 = parseFloat(document.getElementById("mul1").value);
+            const mul2 = parseFloat(document.getElementById("mul2").value);
+            const mulResult = parseFloat(document.getElementById("mulResult").value);
+            if (mul1 * mul2 !== mulResult) {
+                errorMessage += "Phép nhân sai!<br>";
+                isValid = false;
+            }
+            const div1 = parseFloat(document.getElementById("div1").value);
+            const div2 = parseFloat(document.getElementById("div2").value);
+            const divResult = parseFloat(document.getElementById("divResult").value);
+            if (div2 !== 0 && div1 / div2 !== divResult) {
+                errorMessage += "Phép chia sai!<br>";
+                isValid = false;
+            }
+
+            document.getElementById("errorMessage").innerHTML = isValid ? "Tất cả phép toán đúng!" : errorMessage;
+        }
+    </script>
+
+</body>
+</html>
